@@ -2,6 +2,7 @@
 body, html {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif; /* Exemplo de fonte do Google Fonts */
 }
 
 /* Estilo para o cabeçalho */
@@ -9,18 +10,21 @@ header {
     background-color: #343a40; /* Cor do cabeçalho ajustada para o Bootstrap */
     color: #fff;
     padding: 20px 0;
+    text-align: center; /* Centraliza o texto */
 }
 
 /* Estilo para a seção de introdução */
 .intro {
     background-color: #f8f9fa; /* Cor de fundo ajustada para o Bootstrap */
-    padding: 40px 0;
+    padding: 40px;
+    text-align: justify; /* Justifica o texto */
+    line-height: 1.6; /* Espaçamento entre linhas aumentado */
 }
 
 /* Estilo para a seção do dataset */
 .dataset {
     background-color: #fff; /* Cor de fundo ajustada para o Bootstrap */
-    padding: 40px 0;
+    padding: 40px;
 }
 
 /* Estilo para a lista de áudios */
@@ -36,6 +40,11 @@ header {
 .audio-item {
     margin: 0 10px 20px; /* Espaçamento entre os itens ajustado */
     text-align: center; /* Centraliza o conteúdo */
+    transition: transform 0.3s ease; /* Adiciona um efeito de transição suave */
+}
+
+.audio-item:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho ao passar o mouse */
 }
 
 /* Estilo para o rodapé */
