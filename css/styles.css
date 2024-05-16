@@ -1,0 +1,87 @@
+/* Adiciona margem e padding ao redor do corpo e do HTML */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Centraliza o conteúdo */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background-color: #141414;
+    color: #fff;
+    padding: 20px 0;
+}
+
+/* Alinha o texto do cabeçalho */
+header h1 {
+    text-align: center;
+}
+
+/* Estilo para a seção de introdução */
+.intro {
+    background-color: #f2f2f2;
+    padding: 40px 0;
+}
+
+/* Estilo para a seção do dataset */
+.dataset {
+    padding: 40px 0;
+}
+
+/* Alinha o título do dataset */
+
+.dataset {
+    padding: 40px 0;
+    margin-bottom: 100px; /* Adiciona margem na parte inferior da seção */
+}
+
+
+/* Estilo para a lista de áudios */
+.audio-list {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Altera para flexbox */
+}
+
+/* Estilo para cada item de áudio */
+.audio-item {
+    margin-right: 20px; /* Adiciona margem entre os itens */
+}
+
+/* Estilo para o título do áudio */
+.audio-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilo para os controles de áudio */
+.audio-controls {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para o tempo do áudio */
+.audio-time {
+    margin-left: 10px; /* Altera a margem esquerda */
+}
+
+
+/* Estilo para o rodapé */
+
+footer {
+    background-color: #141414;
+    color: #fff;
+    padding: 5px 0;
+    text-align: center;
+    position: fixed; /* Fixa o rodapé */
+    left: 0; /* Alinha à esquerda */
+    bottom: 0; /* Alinha na parte inferior */
+    width: 100%; /* Ocupa toda a largura */
+}
+/* Estilo para o rodapé */
