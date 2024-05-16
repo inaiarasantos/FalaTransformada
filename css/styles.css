@@ -4,84 +4,44 @@ body, html {
     padding: 0;
 }
 
-/* Centraliza o conteúdo */
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 /* Estilo para o cabeçalho */
 header {
-    background-color: #141414;
+    background-color: #343a40; /* Cor do cabeçalho ajustada para o Bootstrap */
     color: #fff;
     padding: 20px 0;
 }
 
-/* Alinha o texto do cabeçalho */
-header h1 {
-    text-align: center;
-}
-
 /* Estilo para a seção de introdução */
 .intro {
-    background-color: #f2f2f2;
+    background-color: #f8f9fa; /* Cor de fundo ajustada para o Bootstrap */
     padding: 40px 0;
 }
 
 /* Estilo para a seção do dataset */
 .dataset {
+    background-color: #fff; /* Cor de fundo ajustada para o Bootstrap */
     padding: 40px 0;
 }
-
-/* Alinha o título do dataset */
-
-.dataset {
-    padding: 40px 0;
-    margin-bottom: 100px; /* Adiciona margem na parte inferior da seção */
-}
-
 
 /* Estilo para a lista de áudios */
 .audio-list {
     list-style: none;
     padding: 0;
-    display: flex; /* Altera para flexbox */
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens se ajustem automaticamente */
+    justify-content: center; /* Centraliza os itens horizontalmente */
 }
 
 /* Estilo para cada item de áudio */
 .audio-item {
-    margin-right: 20px; /* Adiciona margem entre os itens */
+    margin: 0 10px 20px; /* Espaçamento entre os itens ajustado */
+    text-align: center; /* Centraliza o conteúdo */
 }
-
-/* Estilo para o título do áudio */
-.audio-title {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-/* Estilo para os controles de áudio */
-.audio-controls {
-    display: flex;
-    align-items: center;
-}
-
-/* Estilo para o tempo do áudio */
-.audio-time {
-    margin-left: 10px; /* Altera a margem esquerda */
-}
-
 
 /* Estilo para o rodapé */
-
 footer {
-    background-color: #141414;
+    background-color: #343a40; /* Cor do rodapé ajustada para o Bootstrap */
     color: #fff;
-    padding: 5px 0;
+    padding: 20px 0;
     text-align: center;
-    position: fixed; /* Fixa o rodapé */
-    left: 0; /* Alinha à esquerda */
-    bottom: 0; /* Alinha na parte inferior */
-    width: 100%; /* Ocupa toda a largura */
 }
-/* Estilo para o rodapé */
