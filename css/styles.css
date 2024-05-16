@@ -7,7 +7,7 @@ body, html {
 
 /* Estilo para o cabeçalho */
 header {
-    background-color: #008000; /* Cor do cabeçalho ajustada para o Bootstrap */
+    background-color: #0c77e3; /* Cor do cabeçalho ajustada para o Bootstrap */
     color: #fff; /* Cor do texto dentro do cabeçalho */
     padding: 20px 0;
     text-align: center; /* Centraliza o texto */
@@ -18,9 +18,48 @@ header h3 {
     color: #fff; /* Cor do texto dentro do h3 */
 }
 
+/* Estilo para a seção de introdução */
+.intro {
+    background-color: #f8f9fa; /* Cor de fundo ajustada para o Bootstrap */
+    padding: 40px;
+    text-align: justify; /* Justifica o texto */
+    line-height: 1.6; /* Espaçamento entre linhas aumentado */
+}
+
+/* Estilo para a seção do dataset */
+.dataset {
+    background-color: #fff; /* Cor de fundo ajustada para o Bootstrap */
+    padding: 40px;
+}
+
+/* Estilo para a lista de áudios */
+.audio-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens se ajustem automaticamente */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estilo para cada item de áudio */
+.audio-item {
+    margin: 0 10px 20px; /* Espaçamento entre os itens ajustado */
+    text-align: center; /* Centraliza o conteúdo */
+    transition: transform 0.3s ease; /* Adiciona um efeito de transição suave */
+}
+
+.audio-item:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+}
+
+/* Estilo para os títulos dos áudios */
+.audio-title {
+    margin-top: 0; /* Remove a margem superior padrão */
+}
+
 /* Estilo para o rodapé */
 footer {
-    background-color: #008000; /* Cor do rodapé ajustada para o Bootstrap */
+    background-color: #0c77e3; /* Cor do rodapé ajustada para o Bootstrap */
     color: #fff;
     padding: 20px 0;
     text-align: center;
