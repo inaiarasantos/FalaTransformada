@@ -1,74 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Metadados -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Título da página -->
   <title>Projeto - CPQD</title>
+  <!-- Estilos -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
+  <!-- Script de envio de resposta -->
+  <script>
+    function enviarResposta(event) {
+      event.preventDefault(); // Evita o comportamento padrão do formulário
+
+      // Obtendo o formulário e os dados
+      var form = document.getElementById("google-form");
+      var formData = new FormData(form);
+
+      // Adicionando a resposta selecionada aos dados do formulário
+      var selectedAudio = document.querySelector('input[name="audio_original"]:checked');
+      if (!selectedAudio) {
+        alert("Por favor, selecione um áudio antes de enviar.");
+        return;
+      }
+      formData.append("entry.2105078166", selectedAudio.value);
+
+      // Criando uma requisição AJAX
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://docs.google.com/forms/d/e/1FAIpQLSdCMjWCzZ1idmvvDOzUIevLqQJ_PjYaqIYxrwT4YhAHGO2k9g/formResponse", true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          // Mostrar alerta de sucesso após o envio
+          var alertPlaceholder = document.getElementById('alertPlaceholder');
+          var alertSuccess = document.createElement('div');
+          if (xhr.status === 200) {
+            alertSuccess.className = 'alert alert-success alert-dismissible fade show';
+            alertSuccess.role = 'alert';
+            alertSuccess.innerHTML = `
+              <strong>Obrigada!</strong> Você fez parte da avaliação do nosso projeto.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+          } else {
+            alertSuccess.className = 'alert alert-primary';
+            alertSuccess.role = 'alert';
+            alertSuccess.innerHTML = `
+              <strong>Obrigada!</strong> Mensagem Enviada.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+          }
+          alertPlaceholder.append(alertSuccess);
+        }
+      };
+      xhr.send(formData); // Enviando os dados do formulário
+    }
+  </script>
 </head>
 <body>
+  <!-- Cabeçalho -->
   <header class="bg-green text-white py-4">
     <div class="container">
       <h3>Transformação de Voz <small class="text-muted">Grupo 3 - Fala</small></h3>
     </div>
   </header>
 
+  <!-- Introdução -->
   <section class="intro py-4">
     <div class="container">
-      <p>A Transformação de Voz em nosso projeto vai além do simples ato de alterar a voz, buscamos capturar os detalhes, 
-      o tom e a profundidade emocional que tornam cada voz única. 
-      Preservar as características vocais naturais durante a reprodução de fala é uma tecnologia inovadora. Não apenas ela reproduz
-      fielmente essas características, mas também proporciona a capacidade de escolher uma voz que traga conforto emocional.
-      Avaliar a dedução e examinar as melhores abordagens é crucial para garantir a eficácia e a excelência do nosso trabalho.</p>
+      <p>A Transformação de Voz em nosso projeto vai além do simples ato de alterar a voz, buscamos capturar os detalhes, o tom e a profundidade emocional que tornam cada voz única. Preservar as características vocais naturais durante a reprodução de fala é uma tecnologia inovadora. Não apenas ela reproduz fielmente essas características, mas também proporciona a capacidade de escolher uma voz que traga conforto emocional. Avaliar a dedução e examinar as melhores abordagens é crucial para garantir a eficácia e a excelência do nosso trabalho.</p>
     </div>
   </section>
 
-  <section class="dataset py-4">
-    <div class="container">
-      <h3>Avaliação do Dataset Treinado</h3>
-      <!-- Conteúdo da avaliação do dataset aqui -->
-    </div>
-  </section>
-
+  <!-- Áudios -->
   <section class="audios py-4">
     <div class="container">
       <div class="row">
+        <!-- Áudio 1 -->
         <div class="col-md-4">
           <div class="audio-item">
-            <h5 class="audio-title">1</h5>
+            <h5 class="audio-title">Áudio 1</h5>
             <div class="audio-controls">
               <audio controls src="files/original_602.wav"></audio>
               <span class="audio-time">0:00</span>
             </div>
+            <input type="radio" name="audio_original" value="1"> Esse é o áudio original
           </div>
         </div>
+        <!-- Áudio 2 -->
         <div class="col-md-4">
           <div class="audio-item">
-            <h5 class="audio-title">2</h5>
+            <h5 class="audio-title">Áudio 2</h5>
             <div class="audio-controls">
               <audio controls src="files/inferencia_502.wav"></audio>
               <span class="audio-time">0:00</span>
             </div>
+            <input type="radio" name="audio_original" value="2"> Esse é o áudio original
           </div>
         </div>
+        <!-- Áudio 3 -->
         <div class="col-md-4">
           <div class="audio-item">
-            <h5 class="audio-title">3</h5>
+            <h5 class="audio-title">Áudio 3</h5>
             <div class="audio-controls">
               <audio controls src="files/trasfor.wav"></audio>
               <span class="audio-time">0:00</span>
             </div>
+            <input type="radio" name="audio_original" value="3"> Esse é o áudio original
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="dataset py-4">
+  <!-- Formulário Google -->
+  <section class="google-form py-4">
     <div class="container">
-      <h3>Selecione o Áudio original</h3>
-      <!-- Conteúdo da avaliação do dataset aqui -->
+      <form id="google-form">
+        <!-- Elementos do formulário -->
+        <div id="i2" class="gubaDc OIC90c RjsPE"></div>
+        <div class="lLfZXe fnxRtf BpKDyb" aria-labelledby="i1" aria-describedby="i2 i3" aria-required="true" role="radiogroup">
+          <input type="hidden" name="entry.2105078166_sentinel">
+          <div class="N9Qcwe">
+            <label class="T5pZmf">
+              <div class="Zki2Ve" dir="auto"></div>
+              <div class="eRqjfd" dir="auto">
+                <div class="d7L4fc bJNwt  aomaEc ECvBRb">
+                  <div class="Od2TWd hYsg7c" aria-label="" data-value="1" role="radio" aria-checked="false" aria-posinset="1" aria-setsize="5" tabindex="0">
+                    <div class="x0k1lc MbhUzd"></div>
+                    <div class="uyywbd"></div>
+                    <div class="vd3tt">
+                      <div class="AB7Lab Id5V1">
+                        <div class="rseUEf nQOrEb"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </label>
+            <!-- Botão de envio -->
+            <button type="submit" class="btn btn-primary" onclick="enviarResposta(event)">Enviar</button>
+            <!-- Placeholder para o alerta -->
+            <div id="alertPlaceholder" class="mt-3"></div>
+            
+          </div>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -80,6 +156,6 @@
 
   <!-- Scripts do Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-RXH5ahKdbkF9gQy1RTPHR6G8hR+dE+cWxhpoLcn3uK4cBKEFiRttW1L2G5m5W9eR" crossorigin="anonymous"></script>
 </body>
 </html>
