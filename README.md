@@ -18,5 +18,5 @@ O objetivo desta página é permitir a avaliação de áudios transformados em n
 Inaiara Santos || 19 996206482
 
 A ideia surgiu a partir de um projeto já desenvolvido, cujas referências citarei a seguir.
-[text](https://contest.embarcados.com.br/projetos/emocoes-wifi/)
-[text](https://portal.vidadesilicio.com.br/banco-de-dados-com-google-planilhas-com-esp/#Referencias)
+[Projeto Emoções-Wifi](https://contest.embarcados.com.br/projetos/emocoes-wifi/)
+[Referências usada  - Projeto Emoções-Wifi](https://portal.vidadesilicio.com.br/banco-de-dados-com-google-planilhas-com-esp/#Referencias)
